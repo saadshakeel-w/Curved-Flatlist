@@ -16,16 +16,16 @@ import {
 
 const Listing = () => {
   const [data, setData] = useState([
-    {id: 0, value: 'C1CD2F', name: 'Football'},
-    {id: 1, value: '360EF5', name: 'Salsa'},
-    {id: 2, value: '51BB75', name: 'Chess'},
-    {id: 3, value: '340A57', name: 'Snooker'},
-    {id: 4, value: '99E11F', name: 'Dancing'},
-    {id: 5, value: '937F07', name: 'Coding'},
-    {id: 6, value: 'A341B9', name: 'Dating'},
-    {id: 7, value: 'BC8BFB', name: 'Making'},
-    {id: 8, value: 'ADC304', name: 'Cars Show'},
-    {id: 9, value: '4496C2', name: 'Race'},
+    {id: 0, value: 'C1CD2F', name: '@david'},
+    {id: 1, value: '360EF5', name: '@elsa'},
+    {id: 2, value: '51BB75', name: '@king'},
+    {id: 3, value: '340A57', name: '@sarmad'},
+    {id: 4, value: '99E11F', name: '@Dancing'},
+    {id: 5, value: '937F07', name: '@Coding'},
+    {id: 6, value: 'A341B9', name: '@Dating'},
+    {id: 7, value: 'BC8BFB', name: '@Making'},
+    {id: 8, value: 'ADC304', name: '@Cars Show'},
+    {id: 9, value: '4496C2', name: '@Race'},
     {id: 10, value: 'A0B2BC', name: 'Cooking'},
     {id: 11, value: 'DC4460', name: 'Riding'},
     {id: 12, value: 'E391CA', name: 'Cinema'},
@@ -117,7 +117,13 @@ const Listing = () => {
               backgroundColor: 'red',
               borderRadius: 100,
             }}></View>
-          <Text>{item.name}</Text>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: 12,
+            }}>
+            {item.name}
+          </Text>
           {/* <Text style={[styles.text]}>{item.name}</Text> */}
           {/* <View
               style={{
@@ -141,7 +147,6 @@ const Listing = () => {
   return (
     <View
       style={{
-        backgroundColor: 'black',
         height: (Dimensions.get('window').height / 100) * 20,
       }}>
       <Animated.FlatList

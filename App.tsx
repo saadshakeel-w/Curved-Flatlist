@@ -38,7 +38,10 @@ function App(): JSX.Element {
   };
 
   return (
-  <Listing/>
+    <View style={{flex:1,backgroundColor:"white"}}>
+ <Listing/>
+    </View>
+ 
   // <Listing2/>
   );
 }
