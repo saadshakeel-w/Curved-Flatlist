@@ -60,6 +60,7 @@ const Listing = () => {
       (index - 3) * ITEM_SIZE,
       (index - 2) * ITEM_SIZE,
       (index - 1) * ITEM_SIZE,
+      index * ITEM_SIZE,
     ];
     const translateX = scrollY.interpolate({
       inputRange: inputRange2,
@@ -67,11 +68,11 @@ const Listing = () => {
     });
     const translateY = scrollY.interpolate({
       inputRange,
-      outputRange: [-100, -40, 0, 40, 0],
+      outputRange: [-45, -25, 15, 25, 15, -25],
     });
     const scale = scrollY.interpolate({
       inputRange,
-      outputRange: [1, 1, 1, 1, 1],
+      outputRange: [1, 1, 1, 1, 1, 1],
     });
     if (!item.value) {
       // return <View style={{height: SPACE_ITEM_SIZE}} />;
@@ -89,7 +90,7 @@ const Listing = () => {
               // marginRight: wp('10%'),
               alignItems: 'center',
               borderRadius: wp('17%'),
-              backgroundColor: `#${item.value}`,
+              // backgroundColor: `#${item.value}`,
             },
           ]}>
           {/* <Pressable
@@ -109,7 +110,15 @@ const Listing = () => {
                 alignItems: 'center',
               },
             ]}> */}
-          <Text style={[styles.text]}>{item.name}</Text>
+          <View
+            style={{
+              height: (Dimensions.get('window').height / 100) * 6,
+              width: (Dimensions.get('window').height / 100) * 6,
+              backgroundColor: 'red',
+              borderRadius: 100,
+            }}></View>
+          <Text>{item.name}</Text>
+          {/* <Text style={[styles.text]}>{item.name}</Text> */}
           {/* <View
               style={{
                 flexDirection: 'row',
@@ -130,7 +139,11 @@ const Listing = () => {
     }
   };
   return (
-    <View style={{backgroundColor: 'black', flex: 1}}>
+    <View
+      style={{
+        backgroundColor: 'black',
+        height: (Dimensions.get('window').height / 100) * 20,
+      }}>
       <Animated.FlatList
         horizontal
         showsVerticalScrollIndicator={false}
